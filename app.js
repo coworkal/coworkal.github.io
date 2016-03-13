@@ -12,7 +12,7 @@ var flyerApp = angular.module('flyerApp', [
 config([
     'FacebookProvider',
     function(FacebookProvider) {
-        var myAppId = '588036218022182';
+        var myAppId = '586301318195672';
         FacebookProvider.init(myAppId);
     }
 ]).
