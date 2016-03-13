@@ -44,12 +44,12 @@
             <td><a href="https://facebook.com/events/{{ event.id }}">{{ event.name }}</a></td>
             <td><a href="https://facebook.com/{{event.owner.id}}">{{ event.owner.name }}</a> </td>
             <td><a href="#/flyer/{{ event.night_id }}">#{{ event.night_id }}</a></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.title == 'Pass']">{{ event.check.title }}</span></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.description == 'Pass']">{{ event.check.description }}</span></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.start == 'Pass']">{{ event.check.start }}</span></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.end == 'Pass']">{{ event.check.end }}</span></td>
-            <td><span class="label" ng-class="{true:'label-warning', false:'label-success'}[event.place.full == 'To Be Posted']">{{ event.place.full }}</td>
-            <td><span class="label" ng-class="{'Over Capacity':'label-danger', 'Full':'label-warning', 'Pass':'label-success'}[event.check.size]">{{ event.check.size }}: {{ event.place.capacity }}</span>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.title == 'Pass']">{{ event.check.title }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.description == 'Pass']">{{ event.check.description }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.start == 'Pass']">{{ event.check.start }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.end == 'Pass']">{{ event.check.end }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-warning', false:'label-success'}[event.place.full == 'To Be Posted']">{{ event.place.full }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{'Over Capacity':'label-danger', 'Full':'label-warning', 'Pass':'label-success'}[event.check.size]">{{ event.check.size }}: {{ event.place.capacity }}</span></h4>
             <td>{{ event.attending_count }}</td>
             <td>{{ event.interested_count }}</td>
             </td>
@@ -77,12 +77,12 @@
             <td><a href="https://facebook.com/events/{{ event.id }}">{{ event.name }}</a></td>
             <td><a href="https://facebook.com/{{event.owner.id}}">{{ event.owner.name }}</a> </td>
             <td><a href="#/flyer/{{ event.night_id }}">#{{ event.night_id }}</a></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.title == 'Pass']">{{ event.check.title }}</span></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.description == 'Pass']">{{ event.check.description }}</span></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.start == 'Pass']">{{ event.check.start }}</span></td>
-            <td><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.end == 'Pass']">{{ event.check.end }}</span></td>
-            <td><span class="label" ng-class="{true:'label-warning', false:'label-success'}[event.place.full == 'To Be Posted']">{{ event.place.full }}</td>
-            <td><span class="label" ng-class="{'Over Capacity':'label-danger', 'Full':'label-warning', 'Pass':'label-success'}[event.check.capacity]">{{ event.place.capacity }}</td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.title == 'Pass']">{{ event.check.title }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.description == 'Pass']">{{ event.check.description }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.start == 'Pass']">{{ event.check.start }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-success', false:'label-danger'}[event.check.end == 'Pass']">{{ event.check.end }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{true:'label-warning', false:'label-success'}[event.place.full == 'To Be Posted']">{{ event.place.full }}</span></h4></td>
+            <td><h4><span class="label" ng-class="{'Over Capacity':'label-danger', 'Full':'label-warning', 'Pass':'label-success'}[event.check.size]">{{ event.check.size }}: {{ event.place.capacity }}</span></h4>
             <td>{{ event.attending_count }}</td>
             <td>{{ event.interested_count }}</td>
         </tr>
