@@ -64,12 +64,12 @@ body {
     margin-bottom: .3rem;
 }
 
-h1 {font-size:26px;}
-h2 {font-size:21px; letter-spacing:-1px;}
-h3 {font-size:18px;}
-h4 {font-size:16px;}
-h5 {font-size:13px;}
-h6 {font-size:10px;}
+h1 {font-size:1.6rem; letter-spacing:-1px}
+h2 {font-size:1.3rem; letter-spacing:-1px;}
+h3 {font-size:1.15rem;}
+h4 {font-size:1rem;}
+h5 {font-size:.85rem;}
+h6 {font-size:.75rem;}
 
 h4 {
   font-weight:700;
@@ -91,6 +91,16 @@ h5 strong {
   max-width:1200px;
 }
 
+.header, .footnote {
+  background: #21b24b;
+}
+path.fill-primary {
+  fill:#21b24b;
+}
+path.fill-secondary {
+  fill:#c3188d;
+}
+
 .cover-image{
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/69546/background-photo-1.jpg");
   background-position: 50% 45%;
@@ -100,7 +110,6 @@ h5 strong {
 }
 
 .header, .footnote {
-  background: #21b24b;
   padding:12px 0;
   color:#fff;
   position:relative;
@@ -113,9 +122,9 @@ h5 strong {
 
 .header-flourish {
   position:absolute;
-  width:30%;
+  width:20%;
   display:block;
-  margin-top:0;
+  margin-top:-1px;
 }
 
 .organizer-row {
@@ -124,14 +133,19 @@ h5 strong {
   margin-bottom:10px;
 }
 
-.organizer-credit {
-  left:-10px;
+.organizer-graphic {
+  width:100%;
+  max-width:600px;
+  height:auto;
+}
+
+.organizer-row .organizer-credit-link {
+  left:-20px;
+  padding-left:0;
 }
 
 .organizer-row .organizer-memo {
   margin-top:10px;
-  padding-right: .9375rem;
-  padding-left: .9375rem;
 }
 
 .footnote {
@@ -156,7 +170,7 @@ h5 strong {
   color:#c3188d;
   font-weight:700;
   letter-spacing:-0.25em;
-  padding-right:.2em;
+  padding-right:.1rem;
 }
 
 .event-description {
@@ -193,22 +207,21 @@ h5 strong {
     margin-top:-30px;
   }
   .organizer-row .organizer-memo {
-    margin-top:36px;
     text-align:right;
+    margin-top:40px;
   }
 }
 
 @media (min-width: 768px) {
   body {font-size:16px; letter-spacing:0;}
-  h1 {font-size:36px;}
-  h2 {font-size:30px; letter-spacing:0;}
+  h1 {font-size:2.25rem;}
+  h2 {font-size:1.85rem; letter-spacing:0;}
   h3 {font-size:26px;}
   h4 {font-size:22px;}
   h5 {font-size:16px;}
   h6 {font-size:16px;}
 
   .organizer-row .organizer-memo {
-    margin-top:40px;
   }
 }
 
@@ -223,11 +236,11 @@ h5 strong {
 }
 
 @media (min-width: 1200px) {
-  h1 {font-size:44px;}
-  h2 {font-size:36px;}
-  h3 {font-size:30px;}
-  h4 {font-size:24px;}
-  h5 {font-size:18px;}
+  h1 {font-size:2.75rem;}
+  h2 {font-size:2.25rem;}
+  h3 {font-size:1.75rem;}
+  h4 {font-size:1.5rem;}
+  h5 {font-size:1.25rem;}
 
   .flyer-subtitle {
     margin-top:9px;
@@ -238,7 +251,9 @@ h5 strong {
   body {
     font-size:12px;
     height:100vh;
-    overflow:hidden;
+    overflow:hidden !important;
+    -webkit-print-color-adjust: exact;
+
   }
   h1, h2, h3, h4, h5, h6 {
     margin-bottom:0;
@@ -270,4 +285,75 @@ h5 strong {
 /*   LINT STYLES   */
 .table th, .table td {
     line-height: 1.3;
+}
+
+.table-success, .table-success > th, .table-success > td, .table-danger, .table-danger > th, .table-danger > td, .table-warning, .table-warning > th, .table-warning > td {
+    border-color: #fff !important;
+}
+
+.table-hover tr:hover .table-success {
+    background-color: #d0e9c6;
+}
+
+.table-hover tr:hover .table-danger {
+    background-color: #ebcccc;
+}
+
+.table-hover tr:hover .table-warning {
+    background-color: #faf2cc;
+}
+
+@media only screen and (max-width: 543px)  {
+
+	/* Force table to not be like tables anymore */
+  table.table-xs-stack, .table-xs-stack thead, .table-xs-stack tbody, .table-xs-stack th, .table-xs-stack td, .table-xs-stack tr {
+		display: block;
+	}
+
+	table.table-xs-stack {
+		border:0 !important;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.table-xs-stack thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	.table-xs-stack tr {
+		border: 2px solid #ccc;
+		margin-bottom:10px;
+	}
+
+	.table-xs-stack td {/* Behave  like a "row" */
+		border: 0 !important;
+		border-bottom: 1px solid #eee !important;
+		position: relative;
+		padding-left: 33% !important;
+		padding-top:6px !important;
+		padding-bottom:6px !important;
+		word-break: break-word;
+	}
+
+	.table-xs-stack td:before {/* Now like a table header */
+		position: absolute;/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 33%;
+		padding-right: 10px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-transform: uppercase;
+		letter-spacing:-1px;
+	}
+
+	.table-xs-stack td:nth-of-type(1) {
+		background:#e5e5e5
+	}
+
+	/*
+	Label the data
+	*/
+	.table-xs-stack td:before { content: attr(data-th) " "; }
 }
