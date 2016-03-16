@@ -1,4 +1,27 @@
 {
+    "colors": [
+        {
+            "primary": "#129a9a",
+            "secondary": "#FB3126"
+        },
+        {
+            "primary": "#447786",
+            "secondary": "#EC6348"
+        },
+        {
+            "primary": "#003A54",
+            "secondary": "#4F7586"
+        },
+        {
+            "primary": "#00475E",
+            "secondary": "#FF0052"
+        },
+        {
+
+            "primary": "#4C2A65",
+            "secondary": "#F38800"
+        }
+    ],
     "venues": [
         {
             "match": "To Be Posted",

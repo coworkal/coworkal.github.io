@@ -9,10 +9,24 @@ angular.module('flyerApp.flyer', ['ngRoute', 'services.eventquery'])
     });
 }])
 
-.controller('FlyerCtrl', [ '$scope', '$routeParams', '$filter', 'eventquery',
+.controller('FlyerCtrl', [ '$scope', '$rootScope', '$routeParams', '$filter', 'eventquery',
 
-function ($scope, $routeParams, $filter, eventquery) {
+function ($scope, $rootScope, $routeParams, $filter, eventquery) {
     $scope.draw = false;
+
+    var color = 0;
+    if($routeParams.color) {
+        color = $routeParams.color % 6;
+    } else {
+        color = $routeParams.id % 6;
+    }
+
+    $scope.bgprimary = 'bg-primary-' + color;
+    $scope.bgsecondary = 'bg-secondary-' + color;
+    $scope.fillprimary = 'fill-primary-' + color;
+    $scope.fillsecondary= 'fill-secondary-' + color;
+    $scope.textprimary = 'text-primary-' + color;
+    $scope.textsecondary = 'text-secondary-' + color;
 
     eventquery.dataReadyCb = function() {
         $scope.events = eventquery.events;
@@ -62,6 +76,7 @@ function ($scope, $routeParams, $filter, eventquery) {
             mid = Math.ceil(len/2);
         $scope.left = $scope.events.slice(0, mid);
         $scope.right = $scope.events.slice(mid, len);
+
     }
 }]).
 directive('eventDetail', function() {

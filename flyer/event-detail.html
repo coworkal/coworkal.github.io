@@ -4,6 +4,6 @@
 </h4>
 <h5 class="event-subtitle">
     <strong>{{event.start_time | date : 'h:mm a'}}-{{ event.end_time | date: 'h:mm a'}}</strong>
-    <span class="divider">//</span> {{event.venue.full}}
+    <span class="divider text-secondary">//</span> {{event.venue.full}}
 </h5>
 <p class="event-description">{{event.short_desc | limitTo: 300}}</p>
