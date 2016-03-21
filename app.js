@@ -29,7 +29,6 @@ function($rootScope, $http) {
 
     $rootScope.coworking_nights = [];
     $rootScope.coworking_venues = [];
-    $rootScope.colors = []
 
     $http.get('events.json').success(function(data) {
         for(var i = 0; i < data.events.length; i++) {
@@ -37,7 +36,6 @@ function($rootScope, $http) {
         }
         $rootScope.coworking_nights = data.events;
         $rootScope.coworking_venues = data.venues;
-        $rootScope.colors = data.colors;
     });
 }]);
 

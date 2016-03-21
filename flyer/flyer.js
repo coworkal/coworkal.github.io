@@ -9,24 +9,10 @@ angular.module('flyerApp.flyer', ['ngRoute', 'services.eventquery'])
     });
 }])
 
-.controller('FlyerCtrl', [ '$scope', '$rootScope', '$routeParams', '$filter', 'eventquery',
+.controller('FlyerCtrl', [ '$scope', '$routeParams', '$filter', 'eventquery',
 
-function ($scope, $rootScope, $routeParams, $filter, eventquery) {
+function ($scope, $routeParams, $filter, eventquery) {
     $scope.draw = false;
-
-    var color = 0;
-    if($routeParams.color) {
-        color = $routeParams.color % 6;
-    } else {
-        color = $routeParams.id % 6;
-    }
-
-    $scope.bgprimary = 'bg-primary-' + color;
-    $scope.bgsecondary = 'bg-secondary-' + color;
-    $scope.fillprimary = 'fill-primary-' + color;
-    $scope.fillsecondary= 'fill-secondary-' + color;
-    $scope.textprimary = 'text-primary-' + color;
-    $scope.textsecondary = 'text-secondary-' + color;
 
     eventquery.dataReadyCb = function() {
         $scope.events = eventquery.events;
@@ -60,7 +46,12 @@ function ($scope, $rootScope, $routeParams, $filter, eventquery) {
         var result = [];
 
         for (var i = 0; i < $scope.events.length ; i++) {
-            var event_date = new Date($scope.events[i].start_time);
+            var start_time = $scope.events[i].start_time;
+
+            // start_time as returned by FB Graph API isn't ISO 8601 compliant
+            // make it so by adding the requiste colon in the timezone
+            var event_date = new Date(start_time.slice(0,22) + ':' + start_time.slice(22));
+
             if (event_date > df && event_date < dt){
                 $scope.events[i].short_desc = ""
                 if ($scope.events[i].description)
@@ -76,7 +67,6 @@ function ($scope, $rootScope, $routeParams, $filter, eventquery) {
             mid = Math.ceil(len/2);
         $scope.left = $scope.events.slice(0, mid);
         $scope.right = $scope.events.slice(mid, len);
-
     }
 }]).
 directive('eventDetail', function() {
