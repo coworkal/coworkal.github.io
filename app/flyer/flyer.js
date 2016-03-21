@@ -46,7 +46,12 @@ function ($scope, $routeParams, $filter, eventquery) {
         var result = [];
 
         for (var i = 0; i < $scope.events.length ; i++) {
-            var event_date = new Date($scope.events[i].start_time);
+            var start_time = $scope.events[i].start_time;
+
+            // start_time as returned by FB Graph API isn't ISO 8601 compliant
+            // make it so by adding the requiste colon in the timezone
+            var event_date = new Date(start_time.slice(0,22) + ':' + start_time.slice(22));
+
             if (event_date > df && event_date < dt){
                 $scope.events[i].short_desc = ""
                 if ($scope.events[i].description)
