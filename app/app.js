@@ -1,4 +1,4 @@
-'use strict';
+/* jshint strict: false */
 
 var flyerApp = angular.module('flyerApp', [
     'ngRoute',

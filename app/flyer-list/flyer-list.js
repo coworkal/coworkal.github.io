@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('flyerApp.flyer-list', ['ngRoute', 'services.eventquery'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -17,7 +15,7 @@ function ($scope, $rootScope, $routeparams) {
     $scope.past = [];
     $scope.next_event = {};
 
-    while($rootScope.coworking_nights.length == 0) {
+    while($rootScope.coworking_nights.length === 0) {
         console.log("Waiting for events");
     }
 

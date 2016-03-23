@@ -10,11 +10,11 @@ function($rootScope, Facebook) {
 
     eventqueryService.getCurrent = function() {
         return new Date();
-    }
+    };
 
     eventqueryService.isSdkReady = function() {
         return Facebook.isReady();
-    }
+    };
 
     eventqueryService.retrieveEvents = function() {
         Facebook.api('/954447087970025', 'GET', {'fields':
@@ -25,7 +25,7 @@ function($rootScope, Facebook) {
                 eventqueryService.dataReadyCb();
             }
         });
-    }
+    };
 
     eventqueryService.init_user = function () {
         if (eventqueryService.isSdkReady()) {
@@ -36,7 +36,7 @@ function($rootScope, Facebook) {
                 }
             });
         }
-    }
+    };
 
     eventqueryService.isUserConnected = function () {
         return eventqueryService._userIsConnected;
@@ -67,7 +67,7 @@ function($rootScope, Facebook) {
             }
         }
         return result;
-    }
+    };
 
     eventqueryService.getCoworkingDate = function(id) {
         for (var i = 0; i < $rootScope.coworking_nights.length; i++) {
@@ -75,7 +75,7 @@ function($rootScope, Facebook) {
                 return new Date($rootScope.coworking_nights[i].date);
             }
         }
-    }
+    };
 
     eventqueryService.getCoworkingId = function(event) {
         for (var i = 0; i < $rootScope.coworking_nights.length; i++) {
@@ -87,7 +87,7 @@ function($rootScope, Facebook) {
             }
         }
         return -1;
-    }
+    };
 
     eventqueryService.getCoworkingVenue = function(event) {
         for (var i = 0; i < $rootScope.coworking_venues.length; i++) {
@@ -96,7 +96,7 @@ function($rootScope, Facebook) {
             }
         }
         return $rootScope.coworking_venues[0];
-    }
+    };
 
     return eventqueryService;
 }]);

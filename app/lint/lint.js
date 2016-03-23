@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('flyerApp.lint', ['ngRoute', 'services.eventquery'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -17,7 +15,7 @@ function($scope, $routeParams, $filter, eventquery) {
         $scope.events = eventquery.events;
         $scope.check_events();
         $scope.draw = true;
-    }
+    };
 
     $scope.$watch(
         function() {
@@ -36,9 +34,9 @@ function($scope, $routeParams, $filter, eventquery) {
 
     var check_title = function(title) {
         if (title.length > 44)
-            return "Title > 44 chars"
+            return "Title > 44 chars";
         return "Pass";
-    }
+    };
 
     var check_description = function(description) {
         if (typeof description == 'undefined') {
@@ -51,7 +49,7 @@ function($scope, $routeParams, $filter, eventquery) {
             return "Description > 150 chars";
         }
         return "Pass";
-    }
+    };
 
     var check_time = function(d, time) {
         if (typeof time == 'undefined') {
@@ -64,7 +62,7 @@ function($scope, $routeParams, $filter, eventquery) {
         $scope.results = [];
         for (var i = 0; i < $scope.events.length; i++) {
             var result = $scope.events[i];
-            result.check = {}
+            result.check = {};
             result.place = eventquery.getCoworkingVenue(result);
             result.check.size = "Pass";
 
@@ -90,7 +88,7 @@ function($scope, $routeParams, $filter, eventquery) {
         $scope.upcoming = [];
         $scope.past = [];
         var today = new Date();
-        for(var i = 0; i < $scope.results.length; i++) {
+        for(i = 0; i < $scope.results.length; i++) {
             var event_date = new Date($scope.results[i].start_time);
 
             if (event_date >= today)

@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('flyerApp.schedule', ['ngRoute', 'services.eventquery'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -21,7 +19,7 @@ function($scope, $routeParams, $rootScope, eventquery) {
         $scope.events = eventquery.getEvents($scope.night_id);
         $scope.base_date = eventquery.getCoworkingDate($scope.night_id);
 
-        while($rootScope.coworking_venues.length == 0) {
+        while($rootScope.coworking_venues.length === 0) {
             console.log("Waiting for venues");
         }
 
@@ -37,7 +35,10 @@ function($scope, $routeParams, $rootScope, eventquery) {
 
         $scope.to_be_posted = [];
 
-        var calendar_events = []; for (var i = 0; i < $scope.events.length; i++) { var e = {}
+        var calendar_events = [];
+
+        for (i = 0; i < $scope.events.length; i++) {
+            var e = {};
             e.title = $scope.events[i].name;
             e.start = $scope.events[i].start_time;
             e.end = $scope.events[i].end_time;
@@ -70,7 +71,7 @@ function($scope, $routeParams, $rootScope, eventquery) {
             editable: false,
             eventLimit: true
         });
-    }
+    };
 
     $scope.$watch(
         function () {
@@ -86,7 +87,4 @@ function($scope, $routeParams, $rootScope, eventquery) {
             eventquery.login();
         }
     };
-
-
-
-}])
+}]);

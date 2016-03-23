@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('flyerApp.flyer', ['ngRoute', 'services.eventquery'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -34,7 +32,7 @@ function ($scope, $routeParams, $filter, eventquery) {
         $scope.date = eventquery.getCoworkingDate($scope.night_id);
         $scope.draw_events();
         $scope.draw = true;
-    }
+    };
 
     $scope.$watch(
         function () {
@@ -67,7 +65,7 @@ function ($scope, $routeParams, $filter, eventquery) {
             var event_date = new Date(start_time.slice(0,22) + ':' + start_time.slice(22));
 
             if (event_date > df && event_date < dt){
-                $scope.events[i].short_desc = ""
+                $scope.events[i].short_desc = "";
                 if ($scope.events[i].description)
                   $scope.events[i].short_desc = $scope.events[i].description.split("\n")[0];
                 $scope.events[i].venue = eventquery.getCoworkingVenue($scope.events[i]);
@@ -81,7 +79,7 @@ function ($scope, $routeParams, $filter, eventquery) {
             mid = Math.ceil(len/2);
         $scope.left = $scope.events.slice(0, mid);
         $scope.right = $scope.events.slice(mid, len);
-    }
+    };
 }]).
 directive('eventDetail', function() {
     return {
