@@ -14,6 +14,20 @@ angular.module('flyerApp.flyer', ['ngRoute', 'services.eventquery'])
 function ($scope, $routeParams, $filter, eventquery) {
     $scope.draw = false;
 
+    var color = 0;
+    if($routeParams.color) {
+        color = $routeParams.color % 6;
+    } else {
+        color = $routeParams.id % 6;
+    }
+
+    $scope.bgprimary = 'bg-primary-' + color;
+    $scope.bgsecondary = 'bg-secondary-' + color;
+    $scope.fillprimary = 'fill-primary-' + color;
+    $scope.fillsecondary= 'fill-secondary-' + color;
+    $scope.textprimary = 'text-primary-' + color;
+    $scope.textsecondary = 'text-secondary-' + color;
+
     eventquery.dataReadyCb = function() {
         $scope.events = eventquery.events;
         $scope.night_id = $routeParams.id;

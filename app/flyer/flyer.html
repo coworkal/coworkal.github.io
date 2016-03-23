@@ -1,106 +1,133 @@
-<div class="intro">
-  <div class="header">
-    <div class="container-fluid">
-      <h1 class="flyer-title pull-xs-left">Coworking Night #{{ night_id }}</h1>
-      <h2 class="flyer-subtitle pull-xs-left pull-sm-right">{{ date | date: 'MMM d, yyyy' }} •  AL.com  •  6‑11pm </h2>
-      <div class="clearfix"></div>
-      <span>If you’ve come to GSD (Get Sh*t Done), then you’ve come to the right place! Attend our events, or invite your team and collaborate, or grab a booth and work solo. Coworking Night is a FREE resource in Huntsville designed to get the minds and talent of our city into motion: learning, creating, and executing ideas into reality.</span>
+<div class="flyer">
+  <div class="intro">
+    <div class="header bg-primary" ng-class="bgprimary">
+      <div class="container-fluid">
+        <h1 class="flyer-title pull-xs-left">Coworking Night #{{ night_id }}</h1>
+        <h2 class="flyer-subtitle pull-xs-left pull-sm-right">{{ date | date: 'MMM d, yyyy' }} •  AL.com  •  6‑11pm </h2>
+        <div class="clearfix"></div>
+        <span>If you’ve come to GSD (Get Sh*t Done), then you’ve come to the right place! Attend our events, or invite your team and collaborate, or grab a booth and work solo. Coworking Night is a FREE resource in Huntsville designed to get the minds and talent of our city into motion: learning, creating, and executing ideas into reality.</span>
+      </div>
     </div>
-  </div>
 
-	<img class="header-flourish" src="flyer/img/header-flourish.png"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 134.423" class="header-flourish">
+      <path class="fill-primary" ng-class="fillprimary" fill="#555" d="M800 0H0v46.674l449.008 87.75"/>
+      <path opacity=".3" d="M449.008 134.423V0H0v46.674"/>
+    </svg>
     <div class="cover-image">
-	</div>
-
-	<div class="row row-margin-sm organizer-row">
-	  <a class="organizer-credit-link" href="http://openhsv.com" target="_blank">
-      <img class="organizer-credit col-xs-12 col-sm-5" src="flyer/img/organized-by-open-huntsville.png" alt="Organized by Open Huntsville" />
-    </a>
-    <p class="col-xs-12 pull-xs-right col-sm-7 organizer-memo">Create your <strong>FREE</strong> Open Huntsville profile: <strong><a href="http://www.openhsv.com">www.openhsv.com</a></strong></p>
   </div>
-</div>
 
-<div ng-if="!draw" class="msg-login">
-  <div class="container-fluid">
-    <p>Facebook won't let us show you the events until you log in.</p>
-    <button type="button" class="btn btn-lg btn-primary mb-lg" ng-click="IntentLogin()">
-      <i class="icon icon-facebook"></i>
-      <span>Login with Facebook</span>
-    </button>
-  </div>
-</div>
-
-<div ng-if="draw">
-  <div class="container-fluid">
-    <div class="row list-events">
-      <div class="col-sm-6">
-        <div ng-repeat="event in left" class="event">
-          <div class="event-detail" event-detail></div>
-        </div>
-      </div>
-
-      <div class="col-sm-6">
-        <div ng-repeat="event in right" class="event">
-          <div class="event-detail" event-detail></div>
-        </div>
+  	<div class="container-fluid">
+      <div class="row organizer-row">
+        <a class="organizer-credit-link col-xs-12 col-sm-6 col-md-5" href="http://openhsv.com" target="_blank">
+          <svg class="organizer-graphic" xmlns="http://www.w3.org/2000/svg" width="799.674" height="219.628" viewBox="0 0 799.674 219.628">
+            <path class="fill-secondary" ng-class="fillsecondary" fill="#555" d="M0 181.655l210.173 37.973 589.5-37.973V0H95.137L0 45.69"/>
+            <path opacity=".3" d="M95.136 181.655V0L0 45.69V173.53"/>
+            <path opacity=".5" d="M0 181.655v-8.123l95.136 8.123h704.538l-589.5 37.973"/>
+            <text transform="translate(222.675 42.35)" fill="#FFF" font-family="Montserrat" font-size="26">
+              Organized by:
+            </text>
+            <text transform="translate(222.675 108.14)" fill="#FFF" font-family="Montserrat" font-size="72">
+              OpenHuntsville
+            </text>
+            <text transform="translate(118.05 160.014)" fill="#FFF" font-family="Montserrat" font-size="30">
+              Create your FREE profile at openhsv.com
+            </text>
+            <g fill="#FFF">
+              <path d="M151.13 52.678h22.023V74.7H151.13zM186.276 18.884h19.88V39.56h-19.88zM116.9 18.884h21.11V39.56H116.9zM116.9 87.824h21.11v20.317H116.9zM186.276 87.824h19.88v20.317h-19.88zM116.9 52.678h21.11V74.7H116.9zM151.132 87.824h22.02v20.317h-22.02zM151.13 18.884h22.023V39.56H151.13zM186.276 52.678h19.88V74.7h-19.88z"/>
+            </g>
+          </svg>
+        </a>
+        <p class="col-xs-12 col-sm-6 col-sm-offset-6 organizer-memo"><img style="width:1.6em; height:1.6em; margin-right:.5em;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE1LjY5MiAxNS42OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE1LjY5MiAxNS42OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yLjk5Niw1LjExYzAuMDM3LDAuMjIzLDAuMTIzLDAuMzY0LDAuMjA4LDAuNDUzQzMuNDA2LDYuOTA5LDQuNTMxLDguMTU4LDUuNTYsOC4xNTggICAgYzEuMTk5LDAsMi4yOTEtMS4zNTIsMi41MDEtMi41OTJjMC4wODctMC4wODgsMC4xNzQtMC4yMywwLjIxMi0wLjQ1NmMwLjA2OC0wLjI1MiwwLjE1Ni0wLjY5LDAuMDAyLTAuODk2ICAgIEM4LjI2Nyw0LjIwNCw4LjI1OCw0LjE5Myw4LjI1LDQuMTg1YzAuMTQ1LTAuNTI5LDAuMzI4LTEuNjIzLTAuMzI3LTIuMzY4QzcuODY1LDEuNzQzLDcuNDk3LDEuMzA0LDYuNzEyLDEuMDcyTDYuMzM3LDAuOTQzICAgIEM1LjcxOSwwLjc1Miw1LjMzMSwwLjcwOSw1LjMxNCwwLjcwN2MtMC4wMjgtMC4wMDItMC4wNTcsMC0wLjA4NCwwLjAwN0M1LjIwOSwwLjcyLDUuMTM1LDAuNzQsNS4wNzgsMC43MzIgICAgYy0wLjE0OC0wLjAyMS0wLjM3LDAuMDU1LTAuNDA5LDAuMDdjLTAuMDUxLDAuMDIxLTEuMjQ4LDAuNS0xLjYxMSwxLjYxNWMtMC4wMzQsMC4wOS0wLjE3OSwwLjU2NCwwLjAxNCwxLjcyNiAgICBjLTAuMDI5LDAuMDItMC4wNTUsMC4wNDQtMC4wNzcsMC4wNzNDMi44MzksNC40MiwyLjkyNyw0Ljg1OCwyLjk5Niw1LjExeiIgZmlsbD0iIzAwMDAwMCIvPgoJCTxwYXRoIGQ9Ik03Ljc4NCwxMy41OTRjLTAuMjIxLTAuMTI0LTAuNDYxLTAuMjQzLTAuNzE3LTAuMzU2Yy0wLjEyNC0wLjA1NS0wLjI1LTAuMTA3LTAuMzc1LTAuMTU2ICAgIGMtMC4wOTgtMC4wMzctMC4yMTQtMC4wODUtMC4yOTUtMC4xMDZsLTEuMTg2LTAuMzJMNy40Myw4LjEzOGwwLjk1MSwwLjZDOC41ODIsOC44NjQsOC43Myw4Ljk3MSw4Ljg5Miw5LjA5bDAuMDM0LDAuMDI1ICAgIEM5LjA4Nyw5LjIzNCw5LjI0NSw5LjM1Niw5LjQsOS40ODJjMC4zMzcsMC4yNzIsMC42MzUsMC41MzgsMC45MTIsMC44MTNjMC4wMjEsMC4wMjEsMC4wNDEsMC4wNCwwLjA2MiwwLjA2MSAgICBjMC4wOTMtMC4xMDMsMC4xODQtMC4xOTUsMC4yNzUtMC4yOTRjLTAuMTE2LTAuMzQ1LTAuMjU3LTAuNjY0LTAuNDI5LTAuOTJjMCwwLTAuMjQ0LTAuMzMzLTAuODIzLTAuNTU1ICAgIGMwLDAtMC4wNDktMC4wMTUtMC4xMjQtMC4wNEM4Ljc1OCw4LjMwNiw4LjI2OSw4LjE1MSw4LjI2OSw4LjE1MUM4LjE2NCw4LjExMyw4LjA3Miw4LjA3Niw3Ljk4OSw4LjA0ICAgIGMtMC4zNS0wLjE3My0wLjY0MS0wLjM2OC0wLjcwMS0wLjU1MmMwLDAsMC4yMDIsMS45NTUtMS41MDcsMi4wMDFMNS41NDMsOS40NzhDMy45OTQsOS4zNCwzLjg5MSw3LjQ4NCwzLjg5MSw3LjQ4NCAgICBjLTAuMTYyLDAuNTA5LTIuMTEsMS4xMDEtMi4xMSwxLjEwMUMxLjIwMiw4LjgwNywwLjk1Nyw5LjE0MSwwLjk1Nyw5LjE0MUMwLjEwMSwxMC40MTEsMCwxMy4yMzcsMCwxMy4yMzcgICAgYzAuMDExLDAuNjQ2LDAuMjksMC43MTMsMC4yOSwwLjcxM2MxLjk2OSwwLjg3OSw1LjA1OCwxLjAzNCw1LjA1OCwxLjAzNGMwLjE2NywwLjAwNCwwLjMyMi0wLjAwNSwwLjQ3Ny0wLjAxNGwwLjAwNCwwLjAxNiAgICBjMCwwLDEuNTA4LTAuMDc3LDMuMDg5LTAuNDIzTDguNzI1LDE0LjMxQzguNTY4LDE0LjEwMyw4LjIxNywxMy44MzYsNy43ODQsMTMuNTk0eiIgZmlsbD0iIzAwMDAwMCIvPgoJCTxwYXRoIGQ9Ik03LjIyMiw3LjU3MWMwLjAyMS0wLjAyNywwLjA0NC0wLjA1NCwwLjA2Ni0wLjA4NEM3LjI4Myw3LjQ2OSw3LjI4Miw3LjQ2LDcuMjgyLDcuNDYgICAgQzcuMjYzLDcuNDk5LDcuMjQxLDcuNTMyLDcuMjIyLDcuNTcxeiIgZmlsbD0iIzAwMDAwMCIvPgoJCTxwYXRoIGQ9Ik0zLjksNy40ODFMMy44OTUsNy40NkwzLjg5MSw3LjQ4MkMzLjg5Miw3LjQ3OCwzLjg5Niw3LjQ3NCwzLjg5Nyw3LjQ3ICAgIEMzLjg5OCw3LjQ3MSwzLjg5OSw3LjQ3NSwzLjksNy40ODF6IiBmaWxsPSIjMDAwMDAwIi8+CgkJPHBhdGggZD0iTTEzLjg4Miw4LjM4OGMtMC41NjEsMC4zOTYtMS4wODQsMC44NDQtMS41ODIsMS4zMTVjLTAuNDk5LDAuNDc0LTAuOTcyLDAuOTczLTEuNDI3LDEuNDg4ICAgIGMtMC4xNjksMC4xOTItMC4zMzMsMC4zODYtMC40OTYsMC41ODFjLTAuMDAyLTAuMDAzLTAuMDA0LTAuMDA2LTAuMDA1LTAuMDA5Yy0wLjI0LTAuMzItMC41LTAuNjA1LTAuNzctMC44NzIgICAgYy0wLjI3LTAuMjY2LTAuNTUtMC41MTItMC44MzgtMC43NDZjLTAuMTQ1LTAuMTE2LTAuMjkxLTAuMjMtMC40NC0wLjM0MkM4LjE2OSw5LjY5MSw4LjAzMyw5LjU5LDcuODQzLDkuNDdsLTEuMTgyLDIuNDA1ICAgIGMwLjEwOCwwLjAyOSwwLjI2NSwwLjA5LDAuMzk4LDAuMTQyYzAuMTQxLDAuMDU0LDAuMjc5LDAuMTEyLDAuNDE3LDAuMTczYzAuMjc2LDAuMTIyLDAuNTQ1LDAuMjU1LDAuODAyLDAuMzk4ICAgIGMwLjUwOCwwLjI4NCwwLjk4MSwwLjYzLDEuMjUxLDAuOTgzbDAuOTA5LDEuMTkybDAuNTIzLTEuMTM0YzAuMjYzLTAuNTY4LDAuNTc4LTEuMTYyLDAuOTAxLTEuNzI4ICAgIGMwLjMyNi0wLjU3LDAuNjc0LTEuMTI5LDEuMDUxLTEuNjY4czAuNzgxLTEuMDYsMS4yMzMtMS41NGMwLjQ1Mi0wLjQ3NywwLjk1MS0wLjkyMSwxLjU0Ni0xLjIzNiAgICBDMTUuMDQ2LDcuNjQ5LDE0LjQ0Miw3Ljk5NiwxMy44ODIsOC4zODh6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==">
+          <strong>RSVP:</strong> <a href="http://www.coworkingnight.org">coworkingnight.org</a>
+        </p>
       </div>
     </div>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="row row-margin-xs hidden-xs-down row-photofooter">
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-1.jpg" alt="coworking night candid"/>
-    </div>
-      <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-2.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-3.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-4.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-5.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-6.jpg" alt="coworking night candid"/>
-    </div>
-      <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-17.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-8.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-9.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-10.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-11.jpg" alt="coworking night candid"/>
-    </div>
-      <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-12.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-13.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-14.jpg" alt="coworking night candid"/>
-    </div>
-    <div class="col-sm-1-5">
-      <img src="flyer/img/footer-photo-15.jpg" alt="coworking night candid"/>
-    </div>
-  </div>
-
-
-  <div class="footnote text-center">
+  <div ng-if="!draw" class="msg-login">
     <div class="container-fluid">
-      <span>A big thanks to <a href="http://al.com" target="_blank">AL.com</a> and <a href="http://www.thewildbeancc.com/" target="_blank">Wild Bean Coffee</a> for supporting Coworking Night!</span>
+      <p>Facebook won't let us show you the events until you log in.</p>
+      <button type="button" class="btn btn-lg btn-blue mb-lg" ng-click="IntentLogin()">
+        <img style="width:1em; height:1em;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDYwLjczNCA2MC43MzMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDYwLjczNCA2MC43MzM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNNTcuMzc4LDAuMDAxSDMuMzUyQzEuNTAyLDAuMDAxLDAsMS41LDAsMy4zNTN2NTQuMDI2YzAsMS44NTMsMS41MDIsMy4zNTQsMy4zNTIsMy4zNTRoMjkuMDg2VjM3LjIxNGgtNy45MTR2LTkuMTY3aDcuOTE0ICAgdi02Ljc2YzAtNy44NDMsNC43ODktMTIuMTE2LDExLjc4Ny0xMi4xMTZjMy4zNTUsMCw2LjIzMiwwLjI1MSw3LjA3MSwwLjM2djguMTk4bC00Ljg1NCwwLjAwMmMtMy44MDUsMC00LjUzOSwxLjgwOS00LjUzOSw0LjQ2MiAgIHY1Ljg1MWg5LjA3OGwtMS4xODcsOS4xNjZoLTcuODkydjIzLjUyaDE1LjQ3NWMxLjg1MiwwLDMuMzU1LTEuNTAzLDMuMzU1LTMuMzUxVjMuMzUxQzYwLjczMSwxLjUsNTkuMjMsMC4wMDEsNTcuMzc4LDAuMDAxeiIgZmlsbD0iI0ZGRkZGRiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+        <span>Login with Facebook</span>
+      </button>
     </div>
   </div>
-</footer>
+
+  <div ng-if="draw">
+    <div class="container-fluid">
+      <div class="row list-events">
+        <div class="col-sm-6">
+          <div ng-repeat="event in left" class="event">
+            <div class="event-detail" event-detail></div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div ng-repeat="event in right" class="event">
+            <div class="event-detail" event-detail></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="row row-margin-xs hidden-xs-down row-photofooter">
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-1.jpg" alt="coworking night candid"/>
+      </div>
+        <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-2.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-3.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-4.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-5.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-6.jpg" alt="coworking night candid"/>
+      </div>
+        <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-17.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-8.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-9.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-10.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-11.jpg" alt="coworking night candid"/>
+      </div>
+        <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-12.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-13.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-14.jpg" alt="coworking night candid"/>
+      </div>
+      <div class="col-sm-1-5">
+        <img src="flyer/img/footer-photo-15.jpg" alt="coworking night candid"/>
+      </div>
+    </div>
+
+
+    <div class="footnote text-center bg-primary" ng-class="bgprimary">
+      <div class="container-fluid">
+        <span>A big thanks to <a href="http://al.com" target="_blank">AL.com</a> and <a href="http://www.thewildbeancc.com/" target="_blank">Wild Bean Coffee</a> for supporting Coworking Night!</span>
+      </div>
+    </div>
+  </footer>
+
+  <!--<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>-->
+</div>
