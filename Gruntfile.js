@@ -169,7 +169,6 @@ module.exports = function (grunt) {
       },
       server: '.tmp'
     },
-
     // Add vendor prefixed styles
     postcss: {
       options: {
@@ -338,7 +337,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'workspaceApp',
+          module: 'flyerApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -377,8 +376,10 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            '*.json',
             '*.{ico,png,txt}',
             '*.html',
+            'views/*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*'
           ]
@@ -399,6 +400,26 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      }
+    },
+    replace: {
+      dist: {
+        options: {
+          patterns: [
+            {
+              match: /588036218022182/g,
+              replacement: '586301318195672'
+            }
+          ]
+        },
+        files: [
+          {
+            expand: true,
+            flatten: true,
+            src: ['<%= yeoman.dist %>/scripts/*.js'],
+            dest: '<%= yeoman.dist %>/scripts/'
+          }
+        ]
       }
     },
 
@@ -471,7 +492,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'replace:dist'
   ]);
 
   grunt.registerTask('default', [

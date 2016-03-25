@@ -10,6 +10,7 @@
   "strict": true,
   "undef": true,
   "unused": true,
+  "multistr": true,
   "globals": {
     "angular": false
   }

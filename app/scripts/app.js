@@ -8,28 +8,55 @@
  *
  * Main module of the application.
  */
-angular
-  .module('workspaceApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
+angular.module('flyerApp', [
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'facebook'
+  ])
+  .config([
+    'FacebookProvider',
+    function(FacebookProvider) {
+      var myAppId = '588036218022182';
+      FacebookProvider.init(myAppId);
+    }
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+      .when('/flyer/:id', {
+        templateUrl: 'views/flyer.html',
+        controller: 'FlyerCtrl',
+        controllerAs: 'flyer'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/flyer-list', {
+        templateUrl: 'views/flyer-list.html',
+        controller: 'FlyerListCtrl',
+        controllerAs: 'flyerList'
+      })
+      .when('/schedule/:id', {
+        templateUrl: 'views/schedule.html',
+        controller: 'ScheduleCtrl',
+        controllerAs: 'schedule'
+      })
+      .when('/lint', {
+        templateUrl: 'views/lint.html',
+        controller: 'LintCtrl',
+        controllerAs: 'lint'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/flyer-list'
       });
-  });
+  })
+  .run(['$rootScope', '$http', function($rootScope, $http) {
+    $rootScope.coworkingNights = [];
+    $rootScope.coworkingVenues = [];
+
+    $http.get('events.json').success(function(data) {
+      for(var i = 0; i < data.events.length; i++) {
+        data.events[i].date = new Date(data.events[i].date);
+      }
+      $rootScope.coworkingNights = data.events;
+      $rootScope.coworkingVenues = data.venues;
+    });
+
+  }]);
