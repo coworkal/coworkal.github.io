@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <h1>Event Linter</h1>
+    <h2>Rules for Creating Coworking Night Facebook Events</h2>
+    <ul>
+        <li>Title: as brief as possible - flyer will be truncated after ~44 characters</li>
+        <li>Location: "AL.com building - [room]"
+            <ul>
+                <li ng-repeat="venue in venues">AL.com building - {{ venue.full }}</li>
+
+            </ul>
+        </li>
+
+        <li>Time: Include start time and end time</li>
+        <li>Description: Begin with one paragraph that is 140 characters or less.  Include remaining description in subsequent paragraphs.</li>
+    </ul>
+
+    <div ng-if="!draw">
+        <button type="button" class="btn btn-full btn-blue mb-lg" ng-click="IntentLogin()">
+            <i class="icon icon-facebook"></i>
+            <span>Login with Facebook</span>
+        </button>
+    </div>
+
+
+    <div ng-if="draw">
+    <h2>Upcoming Events</h2>
+    <table class="table table-bordered table-hover table-xs-stack">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Owner</th>
+                <th>Night</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Room Assignment</th>
+                <th>Event Capacity</th>
+                <th><abbr title="Attending">Att</abbr></th>
+                <th><abbr title="Interested">Int</abbr></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="event in upcoming" ng-class="{true:'highlight', false:''}[event.is_viewer_admin]">
+            <td data-th="Event"><a href="https://facebook.com/events/{{ event.id }}">{{ event.name }}</a></td>
+            <td data-th="Owner"><a href="https://facebook.com/{{event.owner.id}}">{{ event.owner.name }}</a> </td>
+            <td data-th="Night"><a href="#/flyer/{{ event.night_id }}">#{{ event.night_id }}</a></td>
+            <td data-th="Title" ng-class="{true:'table-success', false:'table-danger'}[event.check.title == 'Pass']">{{ event.check.title }}</td>
+            <td data-th="Desc" ng-class="{true:'table-success', false:'table-danger'}[event.check.description == 'Pass']">{{ event.check.description }}</td>
+            <td data-th="Start" ng-class="{true:'table-success', false:'table-danger'}[event.check.start == 'Pass']">{{ event.check.start }}</td>
+            <td data-th="End" ng-class="{true:'table-success', false:'table-danger'}[event.check.end == 'Pass']">{{ event.check.end }}</td>
+            <td data-th="Room" ng-class="{true:'table-warning', false:'table-success'}[event.place.full == 'To Be Posted']">{{ event.place.full }}</td>
+            <td data-th="Capacity" ng-class="{'Over Capacity':'table-danger', 'Full':'table-warning', 'Pass':'table-success'}[event.check.size]">{{ event.check.size }}: {{ event.place.capacity }}</td>
+            <td data-th="Attending">{{ event.attending_count }}</td>
+            <td data-th="Interested">{{ event.interested_count }}</td>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Past Events</h3>
+    <table class="table table-bordered table-hover table-xs-stack">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Owner</th>
+                <th>Night</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Room Assignment</th>
+                <th>Event Capacity</th>
+                <th>Attending</th>
+                <th>Interested</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="event in past" ng-class="{true:'highlight', false:''}[event.is_viewer_admin]">
+            <td data-th="Event"><a href="https://facebook.com/events/{{ event.id }}">{{ event.name }}</a></td>
+            <td data-th="Owner"><a href="https://facebook.com/{{event.owner.id}}">{{ event.owner.name }}</a> </td>
+            <td data-th="Night"><a href="#/flyer/{{ event.night_id }}">#{{ event.night_id }}</a></td>
+            <td data-th="Title" ng-class="{true:'table-success', false:'table-danger'}[event.check.title == 'Pass']">{{ event.check.title }}</td>
+            <td data-th="Desc" ng-class="{true:'table-success', false:'table-danger'}[event.check.description == 'Pass']">{{ event.check.description }}</td>
+            <td data-th="Start" ng-class="{true:'table-success', false:'table-danger'}[event.check.start == 'Pass']">{{ event.check.start }}</td>
+            <td data-th="End" ng-class="{true:'table-success', false:'table-danger'}[event.check.end == 'Pass']">{{ event.check.end }}</td>
+            <td data-th="Room" ng-class="{true:'table-warning', false:'table-success'}[event.place.full == 'To Be Posted']">{{ event.place.full }}</td>
+            <td data-th="Capacity" ng-class="{'Over Capacity':'table-danger', 'Full':'table-warning', 'Pass':'table-success'}[event.check.size]">{{ event.check.size }}: {{ event.place.capacity }}</td>
+            <td data-th="Attending">{{ event.attending_count }}</td>
+            <td data-th="Interested">{{ event.interested_count }}</td>
+        </tr>
+    </table>
+    </div>
+</div>
