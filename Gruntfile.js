@@ -338,7 +338,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           module: 'flyerApp',
-          htmlmin: '<%= htmlmin.dist.options %>',
+          //htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
         cwd: '<%= yeoman.app %>',
@@ -444,6 +444,15 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    // Github pages
+    'gh-pages': {
+      options: {
+        base: 'dist',
+        branch: 'master'
+      },
+      src: ['**']
     }
   });
 
