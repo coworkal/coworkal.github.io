@@ -36,29 +36,29 @@ angular.module('flyerApp')
     var check_title = function(title) {
         if (title.length > 44)
         {
-            return "Title > 44 chars";
+            return 'Title > 44 chars';
         }
-        return "Pass";
+        return 'Pass';
     };
 
     var check_description = function(description) {
         if (typeof description === 'undefined') {
-            return "Description Undefined";
+            return 'Description Undefined';
         }
 
 
-        var short_desc = description.split("\n")[0];
+        var short_desc = description.split('\n')[0];
         if (short_desc.length > 150) {
-            return "Description > 150 chars";
+            return 'Description > 150 chars';
         }
-        return "Pass";
+        return 'Pass';
     };
 
     var check_time = function(d, time) {
         if (typeof time === 'undefined') {
-            return d + " Time Undefined";
+            return d + ' Time Undefined';
         }
-        return "Pass";
+        return 'Pass';
     };
 
     $scope.check_events = function() {
@@ -67,15 +67,15 @@ angular.module('flyerApp')
             var result = $scope.events[i];
             result.check = {};
             result.place = eventquery.getCoworkingVenue(result);
-            result.check.size = "Pass";
+            result.check.size = 'Pass';
 
             var num_people = result.attending_count + 0.5 * result.interested_count;
 
-            if (result.place.full !== "To Be Posted") {
+            if (result.place.full !== 'To Be Posted') {
                 if (num_people >= 2* result.place.capacity) {
-                    result.check.size = "Over Capacity";
+                    result.check.size = 'Over Capacity';
                 } else if (num_people >= result.place.capacity) {
-                    result.check.size = "Full";
+                    result.check.size = 'Full';
                 }
             }
 

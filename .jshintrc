@@ -12,6 +12,7 @@
   "unused": true,
   "multistr": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "$": false
   }
 }

@@ -43,7 +43,7 @@ angular.module('flyerApp')
           return $rootScope.coworkingNights.length > 0;
         },
         function(newVal) {
-          drawList();
+          drawList(newVal);
         }
-      )
+      );
 }]);

@@ -101,6 +101,11 @@ angular.module('flyerApp')
 
     eventqueryService.getCoworkingVenue = function(event) {
         for (var i = 0; i < $rootScope.coworkingVenues.length; i++) {
+
+            if (typeof event.place === 'undefined') {
+                return $rootScope.coworkingVenues[0];
+            }
+
             if (event.place.name.indexOf($rootScope.coworkingVenues[i].match) !== -1) {
                 return $rootScope.coworkingVenues[i];
             }

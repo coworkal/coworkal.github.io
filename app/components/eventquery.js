@@ -91,6 +91,7 @@ function($rootScope, Facebook) {
 
     eventqueryService.getCoworkingVenue = function(event) {
         for (var i = 0; i < $rootScope.coworking_venues.length; i++) {
+            console.log(event.place);
             if (event.place.name.indexOf($rootScope.coworking_venues[i].match) != -1) {
                 return $rootScope.coworking_venues[i];
             }

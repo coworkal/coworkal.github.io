@@ -14,13 +14,13 @@ angular.module('flyerApp')
     $scope.night_id = parseInt($routeParams.id);
     $scope.date = eventquery.getCoworkingDate($scope.night_id);
 
+
     eventquery.dataReadyCb = function() {
         $scope.night_id = parseInt($routeParams.id);
         $scope.events = eventquery.getEvents($scope.night_id);
         $scope.base_date = eventquery.getCoworkingDate($scope.night_id);
 
         while($rootScope.coworkingVenues.length === 0) {
-            console.log("Waiting for venues");
         }
 
         $scope.rooms = $rootScope.coworkingVenues;
@@ -66,9 +66,9 @@ angular.module('flyerApp')
             header: false,
             defaultDate: $scope.base_date,
             allDaySlot: false,
-            minTime: "18:00:00",
-            maxTime: "23:00:00",
-            slotDuration: "00:15:00",
+            minTime: '18:00:00',
+            maxTime: '23:00:00',
+            slotDuration: '00:15:00',
             slotEventOverlap: false,
             editable: false,
             eventLimit: true
