@@ -28,6 +28,11 @@ angular.module('flyerApp', [
         controller: 'FlyerCtrl',
         controllerAs: 'flyer'
       })
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl',
+        controllerAs: 'home'
+      })
       .when('/flyer-list', {
         templateUrl: 'views/flyer-list.html',
         controller: 'FlyerListCtrl',
@@ -44,7 +49,7 @@ angular.module('flyerApp', [
         controllerAs: 'lint'
       })
       .otherwise({
-        redirectTo: '/flyer-list'
+        redirectTo: '/home'
       });
   })
   .run(['$rootScope', '$http', function($rootScope, $http) {
