@@ -101,6 +101,12 @@
         { "date": "April 6, 2016",      "id": 51 },
         { "date": "April 13, 2016",     "id": 52 },
         { "date": "April 20, 2016",     "id": 53 },
-        { "date": "April 27, 2016",     "id": 54 }
+        { "date": "April 27, 2016",     "id": 54 },
+        { "date": "May 4, 2016",     "id": 55 },
+        { "date": "May 11, 2016",     "id": 56 },
+        { "date": "May 18, 2016",     "id": 57 },
+        { "date": "May 25, 2016",     "id": 58 },
+        { "date": "June 1, 2016",     "id": 59 },
+        { "date": "June 8, 2016",     "id": 60 }
     ]
 }
