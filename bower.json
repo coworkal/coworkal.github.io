@@ -1,6 +1,6 @@
 {
   "name": "coworkal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
     "angular": "^1.4.0",
     "tether": "^1.2.0",
