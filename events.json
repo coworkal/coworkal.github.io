@@ -119,6 +119,23 @@
         { "date": "August 10, 2016",    "id": 69 },
         { "date": "August 17, 2016",    "id": 70 },
         { "date": "August 24, 2016",    "id": 71 },
-        { "date": "August 31, 2016",    "id": 72 }
+        { "date": "August 31, 2016",    "id": 72 },
+        { "date": "September 7, 2016",  "id": 73 },
+        { "date": "September 14, 2016", "id": 74 },
+        { "date": "September 21, 2016", "id": 75 },
+        { "date": "September 28, 2016", "id": 76 },
+        { "date": "October 5, 2016",    "id": 77 },
+        { "date": "October 12, 2016",   "id": 78 },
+        { "date": "October 19, 2016",   "id": 79 },
+        { "date": "October 26, 2016",   "id": 80 },
+        { "date": "November 2, 2016",   "id": 81 },
+        { "date": "November 9, 2016",   "id": 82 },
+        { "date": "November 16, 2016",  "id": 83 },
+        { "date": "November 23, 2016",  "id": 84 },
+        { "date": "November 30, 2016",  "id": 85 },
+        { "date": "December 7 2016",    "id": 86 },
+        { "date": "December 14, 2016",  "id": 87 },
+        { "date": "December 21, 2016",  "id": 88 },
+        { "date": "December 28, 2016",  "id": 89 }
     ]
 }
