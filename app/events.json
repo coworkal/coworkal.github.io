@@ -87,6 +87,14 @@
             "map_id": 10,
             "type": "Conference",
             "capacity": 8
+        },
+        {
+            "match": "Orion",
+            "full": "Orion",
+            "floor": 1,
+            "map_id": 11,
+            "type": "Open Area",
+            "capacity": 20
         }
     ],
     "events": [
