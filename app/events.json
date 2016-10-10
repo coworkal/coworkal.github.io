@@ -73,8 +73,8 @@
             "capacity": 14
         },
         {
-            "match": "Rear Pitch",
-            "full": "Rear Pitch Area",
+            "match": "Space Station",
+            "full": "Space Station",
             "floor": 1,
             "type": "Open Area",
             "map_id": 9,
