@@ -8,8 +8,8 @@
  * Factory in the workspaceApp.
  */
 angular.module('flyerApp')
-  .factory('services.eventquery', ['$rootScope', 'Facebook',
-  function ($rootScope, Facebook) {
+  .factory('services.eventquery', ['$rootScope', '$http',
+  function ($rootScope, $http) {
     var eventqueryService = {};
 
     eventqueryService.events = [];
@@ -21,56 +21,26 @@ angular.module('flyerApp')
     };
 
     eventqueryService.isSdkReady = function() {
-        return Facebook.isReady();
+        return true;
     };
 
     eventqueryService.retrieveEvents = function() {
-        Facebook.api('/954447087970025', 'GET', {'fields':
-        'events{owner,id,place,start_time,end_time,description,name,is_viewer_admin,attending_count,interested_count}' },
-        function(response) {
-            eventqueryService.events = response.events.data;
+      $http({
+        method: 'GET',
+        url: 'https://script.google.com/macros/s/AKfycbxDCvI79Q_lV8EHvirA-t44q6pbDkPi1hdMWE3jH73wVaDxH1A/exec'}).then(      function(response) {
+            eventqueryService.events = response.data;
+            console.log(response);
             if(eventqueryService.dataReadyCb) {
                 eventqueryService.dataReadyCb();
             }
         });
     };
 
-    eventqueryService.init_user = function () {
-        if (eventqueryService.isSdkReady()) {
-            Facebook.getLoginStatus(function(response) {
-                if(response.status === 'connected') {
-                    eventqueryService._userIsConnected = true;
-                    eventqueryService.retrieveEvents();
-                }
-            });
-        }
-    };
-
-    eventqueryService.isUserConnected = function () {
-        return eventqueryService._userIsConnected;
-    };
-
-    eventqueryService.login = function() {
-        if(!eventqueryService.isUserConnected()) {
-            Facebook.login(function(response) {
-                if (response.status === 'connected') {
-                    eventqueryService._userIsConnected = true;
-                    eventqueryService.retrieveEvents();
-                }
-            });
-        }
-    };
-
     eventqueryService.getEvents = function(id) {
         var result = [];
-        var df = eventqueryService.getCoworkingDate(id);
-        var dt = eventqueryService.getCoworkingDate(id);
-        df.setDate(df.getDate() - 1);
-        dt.setDate(dt.getDate() + 1);
-
         for (var i = 0; i < eventqueryService.events.length; i++) {
-            var eventDate = new Date(eventqueryService.events[i].start_time);
-            if (eventDate > df && eventDate < dt) {
+            console.log(events[i].cwn, id);
+            if (events[i].cwn == id) {
                 result.push(eventqueryService.events[i]);
             }
         }
@@ -102,11 +72,11 @@ angular.module('flyerApp')
     eventqueryService.getCoworkingVenue = function(event) {
         for (var i = 0; i < $rootScope.coworkingVenues.length; i++) {
 
-            if (typeof event.place === 'undefined') {
+            if (typeof event.room=== 'undefined') {
                 return $rootScope.coworkingVenues[0];
             }
 
-            if (event.place.name.indexOf($rootScope.coworkingVenues[i].match) !== -1) {
+            if (event.room.indexOf($rootScope.coworkingVenues[i].match) !== -1) {
                 return $rootScope.coworkingVenues[i];
             }
         }

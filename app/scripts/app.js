@@ -14,13 +14,6 @@ angular.module('flyerApp', [
     'ngTouch',
     'facebook'
   ])
-  .config([
-    'FacebookProvider',
-    function(FacebookProvider) {
-      var myAppId = '588036218022182';
-      FacebookProvider.init(myAppId);
-    }
-  ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/flyer/:id', {

@@ -10,6 +10,7 @@
 angular.module('flyerApp')
   .controller('FlyerCtrl', ['$scope', '$routeParams', '$filter', 'services.eventquery',
   function ($scope, $routeParams, $filter, eventquery) {
+    eventquery.retrieveEvents();
     $scope.draw = false;
 
     var color = 0;
@@ -34,21 +35,6 @@ angular.module('flyerApp')
         $scope.draw = true;
     };
 
-    $scope.$watch(
-        function () {
-            return eventquery.isSdkReady();
-        },
-        function(newVal) {
-            eventquery.init_user(newVal);
-        }
-    );
-
-    $scope.IntentLogin = function() {
-        if(!eventquery.isUserConnected()) {
-            eventquery.login();
-        }
-    };
-
     $scope.draw_events = function() {
         var df = new Date($scope.date);
         df.setDate(df.getDate() - 1);
@@ -62,9 +48,10 @@ angular.module('flyerApp')
 
             // start_time as returned by FB Graph API isn't ISO 8601 compliant
             // make it so by adding the requiste colon in the timezone
+            console.log($scope.events[i])
             var event_date = new Date(start_time.slice(0,22) + ':' + start_time.slice(22));
 
-            if (event_date > df && event_date < dt){
+            if ($scope.events[i].cwn == $scope.night_id){
                 $scope.events[i].short_desc = '';
                 if ($scope.events[i].description) {
                   $scope.events[i].short_desc = $scope.events[i].description.split('\n')[0];
@@ -81,5 +68,11 @@ angular.module('flyerApp')
         $scope.left = $scope.events.slice(0, mid);
         $scope.right = $scope.events.slice(mid, len);
     };
+
+        $scope.events = eventquery.events;
+        $scope.night_id = parseInt($routeParams.id);
+        $scope.date = eventquery.getCoworkingDate($scope.night_id);
+        $scope.draw_events();
+        $scope.draw = true;
 
   }]);
