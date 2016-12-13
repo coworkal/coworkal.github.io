@@ -1,6 +1,7 @@
 <h4 class="event-title">
-    <a href="https://facebook.com/events/{{ event.id }}">{{ event.name }}</a>
+  {{event.group}} - {{ event.title }}
 </h4>
+
 <h5 class="event-subtitle">
     <strong>{{event.start_time | date : 'h:mm a'}}-{{ event.end_time | date: 'h:mm a'}}</strong>
     <span class="divider">//</span> {{event.venue.full}}
