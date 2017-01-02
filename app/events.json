@@ -65,14 +65,6 @@
             "capacity": 5
         },
         {
-            "match": "Big Spring",
-            "full": "Big Spring Room",
-            "floor": 2,
-            "map_id": 8,
-            "type": "Conference",
-            "capacity": 14
-        },
-        {
             "match": "Space Station",
             "full": "Space Station",
             "floor": 1,
@@ -90,11 +82,19 @@
         },
         {
             "match": "Orion",
-            "full": "Orion",
+            "full": "Orion Open Area",
             "floor": 1,
             "map_id": 11,
             "type": "Open Area",
             "capacity": 20
+        },
+        {
+            "match": "Foundry",
+            "full": "Foundry Conference Room",
+            "floor": 8,
+            "map_id": -1,
+            "type": "Conference",
+            "capacity": 50
         }
     ],
     "events": [
@@ -139,11 +139,16 @@
         { "date": "November 2, 2016",   "id": 81 },
         { "date": "November 9, 2016",   "id": 82 },
         { "date": "November 16, 2016",  "id": 83 },
-        { "date": "November 23, 2016",  "id": 84 },
-        { "date": "November 30, 2016",  "id": 85 },
-        { "date": "December 7 2016",    "id": 86 },
-        { "date": "December 14, 2016",  "id": 87 },
-        { "date": "December 21, 2016",  "id": 88 },
-        { "date": "December 28, 2016",  "id": 89 }
+        { "date": "November 30, 2016",  "id": 84 },
+        { "date": "December 7 2016",    "id": 85 },
+        { "date": "December 14, 2016",  "id": 86 }
+        { "date": "January 4, 2017",  "id": 87 }
+        { "date": "January 11, 2017",  "id": 88 }
+        { "date": "January 18, 2017",  "id": 89 }
+        { "date": "January 25, 2017",  "id": 90 }
+        { "date": "February 1, 2017",  "id": 91 }
+        { "date": "February 8, 2017",  "id": 92 }
+        { "date": "February 15, 2017",  "id": 93 }
+        { "date": "February 22, 2017",  "id": 94 }
     ]
 }
