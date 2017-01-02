@@ -141,14 +141,14 @@
         { "date": "November 16, 2016",  "id": 83 },
         { "date": "November 30, 2016",  "id": 84 },
         { "date": "December 7 2016",    "id": 85 },
-        { "date": "December 14, 2016",  "id": 86 }
-        { "date": "January 4, 2017",  "id": 87 }
-        { "date": "January 11, 2017",  "id": 88 }
-        { "date": "January 18, 2017",  "id": 89 }
-        { "date": "January 25, 2017",  "id": 90 }
-        { "date": "February 1, 2017",  "id": 91 }
-        { "date": "February 8, 2017",  "id": 92 }
-        { "date": "February 15, 2017",  "id": 93 }
+        { "date": "December 14, 2016",  "id": 86 },
+        { "date": "January 4, 2017",  "id": 87 },
+        { "date": "January 11, 2017",  "id": 88 },
+        { "date": "January 18, 2017",  "id": 89 },
+        { "date": "January 25, 2017",  "id": 90 },
+        { "date": "February 1, 2017",  "id": 91 },
+        { "date": "February 8, 2017",  "id": 92 },
+        { "date": "February 15, 2017",  "id": 93 },
         { "date": "February 22, 2017",  "id": 94 }
     ]
 }
