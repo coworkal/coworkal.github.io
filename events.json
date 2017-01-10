@@ -9,92 +9,64 @@
             "capacity": 1000
         },
         {
-            "match": "Apollo",
-            "full": "Apollo Room",
-            "floor": 1,
-            "map_id": 1,
-            "type": "Conference",
-            "capacity": 9
+          "match": "Apollo Row",
+          "full": "Apollo Row",
+          "map_id": "1"
         },
         {
-            "match": "John Hunt",
-            "full": "John Hunt Room",
-            "floor": 1,
-            "map_id": 2,
-            "type": "Conference",
-            "capacity": 5
+          "match": "Main Row",
+          "full": "Main Row",
+          "map_id": "2"
         },
         {
-            "match": "Limestone",
-            "full": "Limestone Room",
-            "floor": 2,
-            "map_id": 3,
-            "type": "Enclave",
-            "capacity": 2
+          "match": "Mission Control",
+          "full": "Mission Control",
+          "map_id": "3"
         },
         {
-            "match": "Madison",
-            "full": "Madison Room",
-            "floor": 2,
-            "map_id": 4,
-            "type": "Enclave",
-            "capacity": 2
+          "match": "Solar Row",
+          "full": "Solar Row",
+          "map_id": "4"
         },
         {
-            "match": "Monte Sano",
-            "full": "Monte Sano Room",
-            "floor": 1,
-            "map_id": 5,
-            "type": "Wellness",
-            "capacity": 2
+          "match": "Orion Row",
+          "full": "Orion Row",
+          "map_id": "5"
         },
         {
-            "match": "Redstone",
-            "full": "Redstone Room",
-            "floor": 2,
-            "map_id": 6,
-            "type": "Conference",
-            "capacity": 5
+          "match": "Saturn Row",
+          "full": "Saturn Row",
+          "map_id": "6"
         },
         {
-            "match": "Saturn V",
-            "full": "Saturn V Room",
-            "floor": 2,
-            "map_id": 7,
-            "type": "Conference",
-            "capacity": 5
+          "match": "Endeavor Row",
+          "full": "Endeavor Row",
+          "map_id": "7"
         },
         {
-            "match": "Space Station",
-            "full": "Space Station",
-            "floor": 1,
-            "type": "Open Area",
-            "map_id": 9,
-            "capacity": 25
+          "match": "Milky Way Row",
+          "full": "Milky Way Row",
+          "map_id": "8"
         },
         {
-            "match": "Vault",
-            "full": "Vault Room",
-            "floor": 2,
-            "map_id": 10,
-            "type": "Conference",
-            "capacity": 8
+          "match": "Andromeda Row",
+          "full": "Andromeda Row",
+          "map_id": "9"
         },
         {
-            "match": "Orion",
-            "full": "Orion Open Area",
-            "floor": 1,
-            "map_id": 11,
-            "type": "Open Area",
-            "capacity": 20
+          "match": "Proxima Row",
+          "full": "Proxima Row",
+          "map_id": "10"
         },
         {
-            "match": "Foundry",
-            "full": "Foundry Conference Room",
-            "floor": 8,
-            "map_id": -1,
-            "type": "Conference",
-            "capacity": 50
+          "match": "Space Station",
+          "full": "Space Station",
+          "map_id": "11"
+        },
+        {
+          "match": "Space Cadets",
+          "full": "Space Cadets",
+          "map_id": "12"
         }
     ],
     "events": [
